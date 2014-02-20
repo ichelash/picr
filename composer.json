@@ -1,7 +1,0 @@
-{
-    "require": {
-        "twig/twig": "1.15.*@dev",
-        "symfony/symfony": "2.5.*@dev",
-        "filp/whoops": "1.1.*@dev"
-    }
-}
