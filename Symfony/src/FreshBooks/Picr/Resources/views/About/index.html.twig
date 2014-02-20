@@ -1,0 +1,15 @@
+{% extends 'FreshBooksPicrBundle::layout.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+  $('.picr-joke').tooltip();
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="starter-template">
+  <h1>About Picr</h1>
+  <p class="lead">Built, with love, by Justin Bull (<a href="https://www.twitter.com/f3ndot">@f3ndot</a>)</p>
+</div>
+{% endblock %}

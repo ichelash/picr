@@ -1,3 +1,7 @@
-_welcome:
+_upload:
     pattern:  /
-    defaults: { _controller: FreshBooksPicrBundle:Welcome:index }
+    defaults: { _controller: FreshBooksPicrBundle:Upload:index }
+
+_about:
+    pattern:  /about
+    defaults: { _controller: FreshBooksPicrBundle:About:index }
