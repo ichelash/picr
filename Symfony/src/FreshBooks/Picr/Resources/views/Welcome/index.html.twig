@@ -1,10 +1,30 @@
 {% extends 'FreshBooksPicrBundle::layout.html.twig' %}
 
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+  $('.picr-joke').tooltip();
+</script>
+{% endblock %}
+
 {% block content %}
-    <h1 class="title">Welcome to Picr!</h1>
+<div class="starter-template">
+  <h1>Welcome to <span class="picr-joke" title="Like Imgur, get it?" data-toggle="tooltip" data-placement="top">Picr</span>!</h1>
+  <p class="lead">Drag and drop your image into the zone below or use the manual upload at the bottom</p>
 
-    <h2>Drag and drop your image into the zone below or use the manual upload</h2>
+  <div id="dropzone">Dropzone</div>
 
-    <div></div>
+</div>
 
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <form role="form">
+      <div class="form-group">
+        <label for="file">Image (.png, .gif, .jpg, etc.)</label>
+        <input id="file" name="file" type="file">
+      </div>
+      <button type="submit" class="btn btn-lg btn-primary btn-block" disabled="disabled">Upload Image</button>
+    </form>
+  </div>
+</div>
 {% endblock %}
