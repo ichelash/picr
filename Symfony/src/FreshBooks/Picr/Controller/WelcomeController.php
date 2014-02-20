@@ -1,6 +1,6 @@
 <?php
 
-namespace Acme\DemoBundle\Controller;
+namespace FreshBooks\Picr\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -13,6 +13,6 @@ class WelcomeController extends Controller
          * or @Template annotation as demonstrated in DemoController.
          *
          */
-        return $this->render('AcmeDemoBundle:Welcome:index.html.twig');
+        return $this->render('FreshBooksPicrBundle:Welcome:index.html.twig');
     }
 }
