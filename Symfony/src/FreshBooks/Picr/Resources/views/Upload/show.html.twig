@@ -22,7 +22,9 @@
 <div class="starter-template">
   <p class="lead">Uploaded {{ image.dateTime|date("r") }}</p>
 
-  <a href="{{ asset(image.getWebPath()) }}"><img class="img-responsive img-thumbnail" src="{{ asset(image.getWebPath()) }}" title="Click to directly view image"></a>
+  <a href="{{ asset(image.getWebPath()) }}"><img class="img-responsive img-thumbnail show-image" src="{{ asset(image.getWebPath()) }}" title="Click to directly view image"></a>
+
+  <p class="text-muted">Click the image to directly access it.</p>
 
 </div>
 
