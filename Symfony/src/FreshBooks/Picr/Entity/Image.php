@@ -24,6 +24,12 @@ class Image
 
   protected $file;
 
+  function __construct(UploadedFile $file = null) {
+    if ($file !== null) {
+      $this->setFile($file);
+    }
+  }
+
   public function upload()
   {
     // the file property can be empty if the field is not required

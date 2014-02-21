@@ -2,6 +2,10 @@ _upload:
     pattern:  /
     defaults: { _controller: FreshBooksPicrBundle:Upload:index }
 
+_ajax_upload:
+    pattern:  /upload
+    defaults: { _controller: FreshBooksPicrBundle:Upload:ajaxUpload }
+
 _show:
     pattern:  /i/{image}
     defaults: { _controller: FreshBooksPicrBundle:Upload:show }
