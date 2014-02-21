@@ -1,0 +1,53 @@
+body {
+  padding-top: 90px;
+}
+.starter-template {
+  padding: 0 15px 40px 15px;
+  text-align: center;
+}
+.dropzone {
+  background-color: rgba(86,61,124,.15);
+  border: 5px dashed rgba(86,61,124,.2);
+  color: rgba(86,61,124,.2);
+  font-size: 40px;
+  font-weight: 600;
+  padding: 40px 120px;
+  border-radius: 20px;
+
+}
+.show-image {
+  display: inline-block;
+}
+.dz-preview {
+  font-size: 14px;
+  color: #333;
+  font-weight: 700;
+  line-height: 1.428;
+  width: 400px;
+  float: left;
+  margin-right: 20px;
+}
+.dz-size {
+  font-weight: 400;
+}
+.dz-preview a {
+  display: inline-block;
+  position: relative;
+}
+.dz-preview a img {
+  opacity: 0.5;
+}
+.dz-error-mark,
+.dz-success-mark {
+  display: none;
+  font-size: 21px;
+  font-weight: 200;
+}
+
+.dz-progress {
+  margin: auto;
+  width: 200px;
+}
+#form_save {
+  margin-top: 15px;
+}
