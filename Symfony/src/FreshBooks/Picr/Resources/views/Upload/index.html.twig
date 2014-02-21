@@ -39,7 +39,7 @@
 {% block content %}
 <div class="starter-template">
   <h1>Welcome to <span class="picr-joke" title="Like Imgur, get it?" data-toggle="tooltip" data-placement="top">Picr</span>!</h1>
-  <p class="lead">Drag and drop your image into the zone below or use the manual upload at the bottom</p>
+  <p class="lead">Drag and drop your images into the zone below!</p>
 
   <form action="{{ path('_ajax_upload') }}" method="post" class="dropzone clearfix" id="my-awesome-dropzone"></form>
 
@@ -47,6 +47,7 @@
 
 <div class="row">
   <div class="col-md-4 col-md-offset-4">
+    <h4>Or be a sad man who uses HTML 4.01</h4>
     {{ form(form) }}
   </div>
 </div>
