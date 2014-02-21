@@ -21,13 +21,17 @@
     thumbnailWidth: 200,
     thumbnailHeight: 200,
     acceptedFiles: 'image/*',
+    previewTemplate: '<div class="dz-preview dz-file-preview well"><div class="dz-details"><div class="dz-filename"><span data-dz-name></span></div><div class="dz-size text-muted" data-dz-size></div><a class="thumb-link" target="_blank"><img data-dz-thumbnail class="img-rounded" /></a></div><div class="dz-progress"><div class="progress progress-striped active"><div class="progress-bar dz-upload" data-dz-uploadprogress role="progressbar"></div></div></div><div class="dz-success-mark text-success"><span>✔ Done!</span></div><div class="dz-error-mark text-danger"><span>✘ Error</span></div><div class="dz-error-message"><span data-dz-errormessage></span></div></div>',
 
-    init: function() {
+   init: function() {
       this.on("success", function(file, response) {
-        $(file.previewElement).find('img').wrap("<a href='" + response[0] + "'/>");
-        console.log($(file.previewElement).find('img'), response[0]);
+        $(file.previewElement).find('a.thumb-link').attr('href', response[0]);
+        $(file.previewElement).find('a.thumb-link img').fadeTo(100,0).delay(100).fadeTo(200,1);
+        $(file.previewElement).find('.dz-success-mark').fadeIn();
+        $(file.previewElement).find('.dz-progress').fadeOut();
       });
-    }
+    },
+
   };
 </script>
 {% endblock %}
@@ -37,7 +41,7 @@
   <h1>Welcome to <span class="picr-joke" title="Like Imgur, get it?" data-toggle="tooltip" data-placement="top">Picr</span>!</h1>
   <p class="lead">Drag and drop your image into the zone below or use the manual upload at the bottom</p>
 
-  <form action="{{ path('_ajax_upload') }}" method="post" class="dropzone" id="my-awesome-dropzone"></form>
+  <form action="{{ path('_ajax_upload') }}" method="post" class="dropzone clearfix" id="my-awesome-dropzone"></form>
 
 </div>
 
