@@ -13,3 +13,7 @@ _show:
 _about:
     pattern:  /about
     defaults: { _controller: FreshBooksPicrBundle:About:index }
+
+_recent:
+    pattern:  /recent
+    defaults: { _controller: FreshBooksPicrBundle:Recent:index }

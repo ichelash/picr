@@ -1,0 +1,23 @@
+{% extends 'FreshBooksPicrBundle::layout.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+  $('.picr-joke').tooltip();
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="starter-template">
+  <h1>Recent Pictures</h1>
+  <p class="lead">You too can be the NSA and spy on other people's pictures!</p>
+</div>
+
+<div class="row">
+	{% for image in images %}
+		<div class="col-md-3">
+	  		<a href="{{ path('_show', {'image': image.getId()}) }}" class="thumbnail"><img src="{{ asset(image.getWebPath()) }}" title="Click to directly view image"></a>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}
