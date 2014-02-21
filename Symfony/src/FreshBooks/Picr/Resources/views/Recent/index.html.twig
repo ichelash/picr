@@ -15,7 +15,7 @@
 
 <div class="row">
 	{% for image in images %}
-		<div class="col-md-3">
+		<div class="col-xs-6 col-md-3">
 	  		<a href="{{ path('_show', {'image': image.getId()}) }}" class="thumbnail"><img src="{{ asset(image.getWebPath()) }}" title="Click to directly view image"></a>
 		</div>
 	{% endfor %}
