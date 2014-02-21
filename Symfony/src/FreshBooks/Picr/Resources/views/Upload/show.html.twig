@@ -1,0 +1,29 @@
+{% extends 'FreshBooksPicrBundle::layout.html.twig' %}
+
+{% block javascripts %}
+{{ parent() }}
+<script type="text/javascript">
+  $('.picr-joke').tooltip();
+
+  $('#form_file').on('change', function() {
+    var $el = $(this);
+    var $submitBtn = $('#form_save');
+
+    if ($el.val() != '') {
+      $submitBtn.prop('disabled', false);
+    } else {
+      $submitBtn.prop('disabled', true);
+    }
+  });
+</script>
+{% endblock %}
+
+{% block content %}
+<div class="starter-template">
+  <p class="lead">Uploaded {{ image.dateTime|date("r") }}</p>
+
+  <a href="{{ asset(image.getWebPath()) }}"><img class="img-responsive img-thumbnail" src="{{ asset(image.getWebPath()) }}" title="Click to directly view image"></a>
+
+</div>
+
+{% endblock %}

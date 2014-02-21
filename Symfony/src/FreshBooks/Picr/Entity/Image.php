@@ -3,43 +3,26 @@
 namespace FreshBooks\Picr\Entity;
 
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * @ORM\Entity
+ */
 class Image
 {
-  protected $file;
+
+  /**
+   * @ORM\Column(type="string", nullable=false)
+   * @ORM\Id
+   */
+  protected $id;
+
+  /**
+   * @ORM\Column(type="datetime")
+   */
   protected $dateTime;
-  protected $name;
-  protected $path;
 
-  public function getFile()
-  {
-    return $this->file;
-  }
-
-  public function setFile(UploadedFile $file = null)
-  {
-    $this->file = $file;
-  }
-
-  public function getDateTime()
-  {
-    return $this->dateTime;
-  }
-
-  public function setDateTime(\DateTime $dateTime = null)
-  {
-    $this->dateTime = $dateTime;
-  }
-
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-
-  public function getName()
-  {
-    $this->name;
-  }
+  protected $file;
 
   public function upload()
   {
@@ -58,7 +41,7 @@ class Image
     );
 
     // set the path property to the filename where you've saved the file
-    $this->path = $newName;
+    $this->id = $newName;
 
     // clean up the file property as you won't need it anymore
     $this->file = null;
@@ -66,16 +49,16 @@ class Image
 
   public function getAbsolutePath()
   {
-    return null === $this->path
+    return null === $this->id
       ? null
-      : $this->getUploadRootDir().'/'.$this->path;
+      : $this->getUploadRootDir().'/'.$this->id;
   }
 
   public function getWebPath()
   {
-    return null === $this->path
+    return null === $this->id
       ? null
-      : $this->getUploadDir().'/'.$this->path;
+      : $this->getUploadDir().'/'.$this->id;
   }
 
   protected function getUploadRootDir()
@@ -89,6 +72,49 @@ class Image
   {
     // get rid of the __DIR__ so it doesn't screw up
     // when displaying uploaded doc/image in the view.
-    return 'uploads/';
+    return 'uploads';
+  }
+
+  public function getFile()
+  {
+    return $this->file;
+  }
+
+  public function setFile(UploadedFile $file = null)
+  {
+    $this->file = $file;
+  }
+
+  /**
+   * Get id
+   *
+   * @return integer 
+   */
+  public function getId()
+  {
+    return $this->id;
+  }
+
+  /**
+   * Set dateTime
+   *
+   * @param \DateTime $dateTime
+   * @return Image
+   */
+  public function setDateTime($dateTime)
+  {
+    $this->dateTime = $dateTime;
+
+    return $this;
+  }
+
+  /**
+   * Get dateTime
+   *
+   * @return \DateTime 
+   */
+  public function getDateTime()
+  {
+    return $this->dateTime;
   }
 }
