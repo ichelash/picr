@@ -12,6 +12,3 @@ _configurator:
 
 _main:
     resource: routing.yml
-
-_picr:
-    resource: "@FreshBooksPicrBundle/Resources/config/routing.yml"
