@@ -2,7 +2,7 @@
     "name": "freshbooks/picr",
     "license": "MIT",
     "type": "project",
-    "description": "Freshbooks simple image sharing app",
+    "description": "FreshBooks simple image sharing app",
     "autoload": {
         "psr-0": { "": "src/" }
     },
