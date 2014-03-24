@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "freshbooks/picr",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "FreshBooks simple image sharing app",
     "autoload": {
         "psr-0": { "": "src/" }
     },
