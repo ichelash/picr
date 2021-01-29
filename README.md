@@ -51,4 +51,4 @@ The Technical Bits
 ### License ###
 
 Copyright 2014 by [Justin A. S. Bull](https://www.justinbull.ca) and 2ndSite Inc. aka [FreshBooks](https://www.freshbooks.com), and licensed under the MIT License. See included
-[LICENSE](LICENSE) file for details.
+[LICENSE](LICENSE) file for details
