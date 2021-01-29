@@ -30,7 +30,25 @@ The Technical Bits
 - `php app/console cache:clear --env=prod --no-debug`
 - `php app/console doctrine:schema:update --force`
 
-### Example Apache Vhost ###
+### Install PHP 5.6
+ sudo apt-get install python-software-properties
+ sudo add-apt-repository ppa:ondrej/php
+ sudo apt-get update
+ sudo apt-get install -y php5.6 php5.6-intl
+
+
+### Install Apache2
+ apt-get install apache2 libapache2-mod-php5
+ 
+ ### Setup Symfony Installer
+ sudo curl -LsS https://symfony.com/installer -o /usr/local/bin/symfony
+ sudo chmod a+x /usr/local/bin/symfony 
+ 
+ ### Create New Symfony 2 Application
+ cd /var/www
+ symfony new myproj 2.8
+ 
+ ### Example Apache Vhost ###
 
 ```
 <VirtualHost *:9080>
